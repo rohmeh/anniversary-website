@@ -41,17 +41,17 @@ h3{
     font-size: var(--h3-size);
     font-weight: 500;
 }
-.reveal{
+.reveal {
     position: relative;
-    transform: translateY(150px);
     opacity: 0;
-    transition: 1s all ease;
-  }
-  
-  .reveal.active{
-    transform: translateY(0);
+    transform: translateY(50px); /* Reduced from 150px */
+    transition: all 1s ease;
+}
+
+.reveal.active {
     opacity: 1;
-  }
+    transform: translateY(0);
+}
 .text{
     font-family: 'Quicksand', sans-serif;
     font-size: var(--text-size);
@@ -65,6 +65,7 @@ h3{
     padding: 25px 50px;
     border-radius: 50px;
     width: fit-content;
+    text-decoration: none;
     margin: 30px 0;
 }
 .huge-btn:hover{
@@ -113,7 +114,7 @@ nav ul li a{
     text-decoration: none;
 }
 a:hover{
-    color: orange;
+    color: gray;
     transition: .5s;
 }
 .checkbtn{
@@ -211,7 +212,7 @@ a:hover{
 
 .timeline{
     display: block;
-    background-color: var(--grey-color-light);
+    background-color: var(--grey-color);
     float: left;
     position: relative;
     top: -30vh;
@@ -219,13 +220,14 @@ a:hover{
     backdrop-filter: blur(4px);
     padding: 8vh var(--horizontal-margin-spacing);
 }
+
 .timeline-container{
     display: flex;
     flex-direction: row;
     margin: 8vh 0;
 }
 .timeline-img{
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/chuck-842bb.appspot.com/o/GurAmanWed%2Fpic2.jpg?alt=media&token=7a0e5f94-d68e-4d32-bd3b-2a82b7acd40c);
+    background-image: url(images/WEBSITE-14.jpg);
     height: 70vh;
     width: 30vw;
     background-position: center;
@@ -344,7 +346,7 @@ a:hover{
     width: 55vw;
     font-size: 4rem;
     text-align: center;
-    margin: auto;
+    margin: auto; /* Keep the original margin */
 }
 .author{
     text-align: center;
@@ -362,9 +364,10 @@ a:hover{
 .hands{
     height: 120vh;
     width: 100%;
-    background-image: url(images/WEBSITE-3.jpg);
+    background-image: url(images/WEBSITE-5.jpg);
     background-size: cover;
     background-position-y: center;
+    background-position-x: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
 }
@@ -398,63 +401,116 @@ a:hover{
     }
 }
 
-/* <===================REGISTRY===================> */
+/* Pop-Up Overlay */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    text-decoration: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
 
-#registry{
-    padding: 20vh var(--horizontal-margin-spacing) 0 var(--horizontal-margin-spacing); 
+/* Pop-Up Content */
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--grey-color);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #212121;
+}
+
+.close-btn:hover {
+    color: grey;
+}
+
+/* Pop-Up Buttons */
+.popup-options {
+    margin-top: 20px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
 }
-.registry-container{
+
+.popup-btn {
     display: block;
-    width: 30vw;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #212121;
+    padding: 15px 30px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove underline */
+    color: #212121; /* Ensure text color matches button style */
 }
-.registry-container .text{
-    text-align: justify;
-    margin: 20px 0;
-}
-.registry-img{
-    display: block;
-    height: 100vh;
-    width: 40vw;
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/chuck-842bb.appspot.com/o/GurAmanWed%2Fpic7.jpg?alt=media&token=79b8d974-04ff-4b2d-bed5-82638399b34e);
-    background-size: cover;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    /* background-attachment: fixed; */
-}
-.registry-img-sm{
-    display: none;
-}
-.registry-img-lg{
-    display: block;
-}
-@media (max-width:1000px){
-    #registry{
-        flex-direction: column;
-    }
-    .registry-img{
-        width: 100%;
-        height: 50vh;
-    }
-    .registry-img-sm{
-        margin-top: 10vh;
-        display: block;
-    }
-    .registry-img-lg{
-        display: none;
-    }
-    .registry-container{
-        width: 100%;
-    }
-    #registry button{
-        margin-inline: auto;
-    }
+
+.popup-btn:hover {
+    color: grey;
+    border-color: grey;
 }
 
 
 /* <===================PARTING MESSAGE===================> */
+
+/* Countdown Section */
+.countdown {
+    text-align: center;
+    margin-bottom: 5vh;
+    margin-top: 15vh;
+}
+
+.countdown h3 {
+    font-size: var(--h2-size);
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between time sections */
+}
+
+.time-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--text-size);
+}
+
+.time-section span {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.time-section p {
+    margin: 0;
+    font-size: var(--text-size);
+}
+
 .parting-message h1{
     margin-top: 10vh;
     text-align: center;
@@ -465,14 +521,56 @@ a:hover{
 
 /* <===================FOOTER===================> */
 
-footer{
+/* Footer Styling */
+footer {
     margin-top: 20vh;
     height: fit-content;
     width: 100%;
     background-color: var(--grey-color);
-    padding: 10vh 30px;
+    padding: 5vh 30px; /* Reduced padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content horizontally */
+    text-align: center; /* Center text alignment */
 }
-footer h2{
-    font-size: 2Srem;
-    font-weight: normal;
+
+/* Contact Info (Left-Aligned) */
+.contact-info {
+    align-self: flex-start; /* Align to the left */
+    margin-bottom: 20px; /* Space between contact info and social links */
+}
+
+.contact-info h3 {
+    margin: 5px 0; /* Adjust spacing between contact details */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+/* Social Media Links (Centered) */
+.social-links {
+    margin: 60px 0; /* Space between contact details and social links */
+    display: flex;
+    gap: 20px; /* Space between icons */
+    justify-content: center; /* Center the icons */
+}
+
+.social-links a {
+    font-size: 2rem; /* Icon size */
+    color: #212121; /* Icon color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-links a:hover {
+    color: grey; /* Change color on hover */
+}
+
+/* Copyright Text (Centered) */
+.copyright {
+    margin-top: -50px; /* Space between social links and copyright */
+    font-size: var(--text-size); /* Match text size */
+    line-height: 1.3rem;
+}
+
+.copyright p {
+    margin: 0; /* Remove default margin */
 }

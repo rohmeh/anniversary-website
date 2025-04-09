@@ -1,0 +1,297 @@
+/* <===================TYPOGRAPHY & FONTS===================> */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Quicksand&display=swap');
+
+/* <===================CSS VARIABLES===================> */
+:root{
+    --h1-size: 7rem;
+    --h2-size: 2.1rem;
+    --h3-size: 1.7rem;
+    --text-size: 1.3rem;
+    --horizontal-margin-spacing:6rem;
+    --grey-color-light: rgba(232,230,230,.6);
+    --grey-color: rgba(232,230,230,1);
+}
+
+/* <===================UNIVERSAL CSS===================> */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    color: #212121;
+}
+html{
+    scroll-behavior: smooth;
+}
+.hz-margin{
+    padding: 0 var(--horizontal-margin-spacing);
+}
+h1{
+    font-size: var(--h1-size);
+    font-weight: 500;
+    line-height: var(--h1-size);
+}
+h2{
+    font-size: var(--h2-size);
+    font-weight: bold;
+}
+h3{
+    font-size: var(--h3-size);
+    font-weight: 500;
+}
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px); /* Reduced from 150px */
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.text{
+    font-family: 'Quicksand', sans-serif;
+    font-size: var(--text-size);
+    line-height: 1.3rem;
+}
+.huge-btn{
+    display: block;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid #212121;
+    padding: 25px 50px;
+    border-radius: 50px;
+    width: fit-content;
+    margin: 30px 0;
+}
+.huge-btn:hover{
+    color: grey;
+    border-color: grey;
+}
+.v-reposition-container{
+    position: absolute;
+    left: 0;
+    width: 100vw;
+}
+.h-reposition-container{
+    width: 100vw;
+    position: relative;
+    top: 100vh;
+}
+/* <===================NAVBAR===================> */
+
+nav{
+    height: 3vh;
+    width: 100%;
+    margin-bottom: 20vh;
+}
+label.logo{
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 0 0 30px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+a:hover{
+    color: gray;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media (max-width:1000px){
+    label.logo{
+        font-size: 20px;
+    }
+    nav ul li a{
+        font-size: 10px;
+    }
+    html{
+        font-size: 10px;
+    }
+}
+@media (max-width:570px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        backdrop-filter: blur(5px);
+        top: 80px;
+        font-weight: bold;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav li ul a{
+        font-size: 20px;
+    }
+    a:hover, a.active{
+        background: none;
+        color: grey;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
+/* <===================NEW GALLERY STYLES===================> */
+.new-gallery-page {
+    padding: 10vh 0;
+    background-color: var(--grey-color-light);
+    text-align: center;
+}
+
+.new-gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 5vh;
+}
+
+.new-gallery-item {
+    position: relative;
+    width: 30vw;
+    height: 30vw;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.new-gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.new-gallery-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Enlarged Image Modal */
+.enlarged-image {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.enlarged-image img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .new-gallery-item {
+        width: 45vw;
+        height: 45vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .new-gallery-item {
+        width: 90vw;
+        height: 90vw;
+    }
+}
+
+/* <===================FOOTER===================> */
+
+/* Footer Styling */
+footer {
+    margin-top: 20vh;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--grey-color);
+    padding: 5vh 30px; /* Reduced padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all content horizontally */
+    text-align: center; /* Center text alignment */
+}
+
+/* Contact Info (Left-Aligned) */
+.contact-info {
+    align-self: flex-start; /* Align to the left */
+    margin-bottom: 20px; /* Space between contact info and social links */
+}
+
+.contact-info h3 {
+    margin: 5px 0; /* Adjust spacing between contact details */
+    text-align: left; /* Ensure text is left-aligned */
+}
+
+/* Social Media Links (Centered) */
+.social-links {
+    margin: 60px 0; /* Space between contact details and social links */
+    display: flex;
+    gap: 20px; /* Space between icons */
+    justify-content: center; /* Center the icons */
+}
+
+.social-links a {
+    font-size: 2rem; /* Icon size */
+    color: #212121; /* Icon color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-links a:hover {
+    color: grey; /* Change color on hover */
+}
+
+/* Copyright Text (Centered) */
+.copyright {
+    margin-top: -50px; /* Space between social links and copyright */
+    font-size: var(--text-size); /* Match text size */
+    line-height: 1.3rem;
+}
+
+.copyright p {
+    margin: 0; /* Remove default margin */
+}

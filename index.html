@@ -16,10 +16,10 @@
         <label for="check" class="checkbtn">
             <i class="fas fa-bars"></i>
         </label>
-        <label class="logo">B&N</label>
         <ul class="text">
             <li><a href="#story" onclick="myFunction()">INVITE</a></li>
-            <li><a href="#stay" onclick="myFunction()">TRAVEL & STAY</a></li>
+            <li><a href="#stay" onclick="myFunction()">GLIMPSES</a></li>
+            <li><a href="gallery.html" onclick="myFunction()">GALLERY</a></li>
         </ul>
     </nav>
 
@@ -30,10 +30,10 @@
         <div class="container-out">
             
             <div class="container-in text">
-                Sunday, April 20, 2024 <br>
+                Sunday, April 20, 2025 <br>
                 Saphire Suites, Nishatganj, Lucknow
 
-                <button class="huge-btn">RSVP</button>
+                <a href="#footer" class="huge-btn">RSVP</a>
             </div>
             <div class="home-img" id="home-img-lg" style="background-image: url('images/WEBSITE-1.jpg');"></div>
         </div>
@@ -49,10 +49,10 @@
             <div class="timings">
                 <h3>01.&nbsp &nbsp Family Get-Together</h3>
                 <div class="text">Saturday, April 19, 2025 <br>
-                    Hotel Gan X Crescent, Kursi Road, Lucknow</div>
+                    Hotel GenX Crescent, Kursi Road, Lucknow</div>
                 <h3>02.&nbsp &nbsp Anniversary Dinner</h3>
-                <div class="text">Sunday, April. 20, 2025 <br>
-                    Saphire Suites, Nishatganj, Lucknow</div>
+                <div class="text">Sunday, April 20, 2025 <br>
+                    Sapphire Suites, Nishatganj, Lucknow</div>
             </div>
         </div>
     </div>
@@ -71,9 +71,9 @@
 
 
             <div class="gallery hz-margin reveal">
-                <div class="gallery-img" style="background-image: url('images/WEBSITE-2.jpg');"></div>
-                <div class="gallery-img" style="background-image: url('images/WEBSITE-1.jpg');"></div>
-                <div class="gallery-img" style="background-image: url('images/WEBSITE-3.jpg');"></div>
+                <div class="gallery-img" style="background-image: url('images/WEBSITE-11.jpg');"></div>
+                <div class="gallery-img" style="background-image: url('images/WEBSITE-10.jpg');"></div>
+                <div class="gallery-img" style="background-image: url('images/WEBSITE-13.jpg');"></div>
             </div>
 
 
@@ -86,60 +86,93 @@
 
 
             <div id="stay">
-                <h2 class="reveal">Travel and Stay</h2>
+                <h2 class="reveal">Glimpses</h2>
                 <div class="stay-container reveal">
                     <div class="stay-item">
-                        <h3>01. <br>
-                            Getting There
-                        </h3>
-                        <div class="text">Easy-to-follow <br> directions to the venue</div>
-                        <div class="text links">MAP & DETAILS</div>
+                        <h3>01. <br> Getting There</h3>
+                        <div class="text">Easy-to-follow <br> directions to the venues</div>
+                        <div class="text links" id="map-details-btn">MAP & DETAILS</div>
                     </div>
                     <div class="stay-item">
                         <h3>02. <br>
-                            Once You're There
+                            Photo Gallery
                         </h3>
-                        <div class="text">Some fun things to do in <br> the area</div>
-                        <div class="text links">OUR RECOMMENDATIONS</div>
+                        <div class="text">Some pre-event <br> pictures</div>
+                        <a href="gallery.html" class="text links">GALLERY</a>
                     </div>
                     <div class="stay-item">
                         <h3>03. <br>
-                            Where to Stay
+                            From the Vault
                         </h3>
-                        <div class="text">Hotels and B&Bs <br> to check out</div>
-                        <div class="text links">LODGING OPTIONS</div>
+                        <div class="text">Some treasured melodies of  <br> Maa & Bapu</div>
+                        <a href="https://open.spotify.com/playlist/0gS9weHIbu7vl4XGpvKtlY?si=Q4bz_VY-Tq6HIZxZdGX1Og&pi=lFzgNrMDQ4On5 " target="_blank" class="text links">SPOTIFY PLAYLIST</a>
                     </div>
                 </div>
             </div>
 
-
-            <!-- 
-            <div id="registry">
-                <div class="registry-container reveal">
-                    <h3>Promises</h3>
-                    <div class="text">
-                        I will provide welfare and happiness for you and the children that we bear and you shall offer me food and help whenever it is required. Together, we will protect our children and home and stand as each other's strength and courage. I will put every other person secodary to you. You make my like complete and promise to respect you. God bless you, my best friend. I pray thee, may my presence fill our life with joy and prospers.
+            <!-- Pop-Up Window -->
+             <div id="popup" class="popup">
+                <div class="popup-content">
+                    <h3>Getting There</h3>
+                    <div class="popup-options">
+                        <a href="https://maps.app.goo.gl/a3sEFhUnfhVPVLfp8" target="_blank" class="popup-btn">Home</a>
+                        <a href="https://maps.app.goo.gl/CQw55do8DkCP4SYt5" target="_blank" class="popup-btn">GenX Crescent</a>
+                        <a href="https://maps.app.goo.gl/VARmnCxCNxLPVLPn9" target="_blank" class="popup-btn">Sapphire Suites</a>
                     </div>
-                    <button class="huge-btn text">BLESS US</button>
+                    <span class="close-btn">&times;</span>
                 </div>
-                <div class="registry-img registry-img-lg" id="parallax2"></div>
             </div>
-            <div class="registry-img registry-img-sm"></div> 
-            -->
 
 
+            <!-- "Hope to See You!" Section -->
             <div class="parting-message reveal">
                 <h1>Hope to See You!</h1>
-                <button class="huge-btn">RSVP</button>
+                
             </div>
 
+            <div class="countdown hz-margin reveal">
+                <h3>Countdown to the Event</h3>
+                <div class="countdown-timer">
+                    <div class="time-section">
+                        <span id="days">00</span>
+                        <p>Days</p>
+                    </div>
+                    <div class="time-section">
+                        <span id="hours">00</span>
+                        <p>Hours</p>
+                    </div>
+                    <div class="time-section">
+                        <span id="minutes">00</span>
+                        <p>Minutes</p>
+                    </div>
+                    <div class="time-section">
+                        <span id="seconds">00</span>
+                        <p>Seconds</p>
+                    </div>
+                </div>
+            </div>
 
-            <footer>
+            <footer id="footer">
                 <h3>Give us a Call</h3>
                 <h3>Hemant: 945-229-4052</h3>
                 <h3>Sharad: 993-562-8677</h3>
                 <h3>Pooja: 996-256-7049</h3>
-                <div class="text">Copyright (c) 2025, <a href="https://rohmeh.github.io" class="text">Rohan Mehra</a>
+            
+                <!-- Social Media Links -->
+                <div class="social-links">
+                    <a href="mailto:romehraa@gmail.com" target="_blank">
+                        <i class="far fa-envelope"></i> <!-- Use an envelope icon for email -->
+                    </a>
+                    </a>
+                    <a href="https://github.com/rohmeh" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            
+                <!-- Copyright Text -->
+                <div class="copyright">
+                    <p>Copyright (c) 2025, <a href="https://rohmeh.github.io" class="text">Rohan Mehra</a></p>
+                </div>
             </footer>
         </div>
     </div>
