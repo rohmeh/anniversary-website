@@ -20,19 +20,16 @@
         </ul>
     </nav>
 
-    <!-- New Gallery Section -->
+    <!-- New Gallery Section 
     <div class="new-gallery-page hz-margin">
         <h2 class="reveal">Photo Gallery</h2>
         <div class="new-gallery-container reveal">
-            <!-- Image 1 -->
             <div class="new-gallery-item">
                 <img src="images/WEBSITE-1.jpg" alt="Gallery Image 1" class="new-gallery-thumbnail">
             </div>
-            <!-- Image 2 -->
             <div class="new-gallery-item">
                 <img src="images/WEBSITE-2.jpg" alt="Gallery Image 2" class="new-gallery-thumbnail">
             </div>
-            <!-- Image 3 -->
             <div class="new-gallery-item">
                 <img src="images/WEBSITE-3.jpg" alt="Gallery Image 3" class="new-gallery-thumbnail">
             </div>
@@ -72,9 +69,96 @@
             
         </div>
     </div>
+    -->
+
+    <!-- Tabbed Gallery Section -->
+    <div class="new-gallery-page hz-margin">
+        <h2 class="reveal">Gallery</h2>
+      
+        <!-- Top Tab Slider -->
+        <div class="tab-slider">
+          <button class="tab-button active" onclick="switchTab('videos')">Videos</button>
+          <button class="tab-button" onclick="switchTab('photos')">Photos</button>
+        </div>
+      
+        <!-- Dynamic Content Area -->
+        <div id="tab-content-container">
+          <!-- Videos Section (Default) -->
+          <div id="videos-content" class="tab-content active">
+            <!-- Video 1 -->
+            <div class="video-item">
+              <div class="video-wrapper">
+                <iframe  
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/BZr5kybDxJM?si=B7hNnbxVQ8z-qilC" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <h4>Trailer | Anniversary Video 2025</h4>
+              <p>YouTube video: <a href="https://youtu.be/BZr5kybDxJM" target="_blank" rel="noopener">
+                Click here
+              </a></p>
+            </div>
+
+
+
+            <!-- Video 1 -->
+            <div class="video-item">
+              <div class="video-wrapper">
+                <iframe  
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/pqm1woiVqG0?si=JD9y3W4kh96Z1dWI" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <h4>Family Get-Together | 19th April 2025</h4>
+              <p>YouTube video: <a href="https://youtu.be/ryulC_cexu8" target="_blank" rel="noopener">
+                Click here
+              </a></p>
+            </div>
+      
+            <!-- Video 2 -->
+            <div class="video-item">
+              <div class="video-wrapper">
+                <iframe 
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/pqm1woiVqG0?si=wm2w5dsrFnQdPbWS" 
+                  title="YouTube video player" 
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+              <h4>Anniversary Dinner | 20th April 2025</h4>
+              <p>YouTube video: <a href="https://youtu.be/pqm1woiVqG0" target="_blank" rel="noopener">
+                Click here
+              </a></p>
+            </div>
+          </div>
+      
+          <!-- Photos Section -->
+          <div id="photos-content" class="tab-content" style="display: none;">
+            <p>Browse all our gallery photos in Google Drive:</p>
+            <a href="https://drive.google.com/drive/folders/1QfULmVRW3QoPmX4Dcr5Sg0zH0Cq0bzrb" target="_blank" class="drive-link">
+              Open Photo Folder in Google Drive
+            </a>
+          </div>
+        </div>
+      </div>
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <h3>Give us a Call</h3>
         <h3>Hemant: 945-229-4052</h3>
         <h3>Sharad: 993-562-8677</h3>

@@ -36,4 +36,30 @@ function reveal() {
     }
 }
 
+function switchTab(tab) {
+    const videosContent = document.getElementById("videos-content");
+    const photosContent = document.getElementById("photos-content");
+    const buttons = document.querySelectorAll(".tab-button");
+  
+    // Hide both contents
+    videosContent.classList.remove("active");
+    photosContent.classList.remove("active");
+    videosContent.style.display = "none";
+    photosContent.style.display = "none";
+  
+    // Remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove("active"));
+  
+    // Show selected tab
+    if (tab === "videos") {
+      videosContent.classList.add("active");
+      videosContent.style.display = "block";
+      buttons[0].classList.add("active"); 
+    } else {
+      photosContent.classList.add("active");
+      photosContent.style.display = "block";
+      buttons[1].classList.add("active"); 
+    }
+  }
+
 window.addEventListener("scroll", reveal);
